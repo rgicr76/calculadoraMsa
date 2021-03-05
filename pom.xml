@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>es.rgicr76</groupId>
+	<artifactId>calculadora-rabbitmq-msa</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<name>calculadora</name>
+	<description>Ejemplo de uso de micro con Spring Boot and RabbitMQ</description>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.3.0.RELEASE</version>
+		<relativePath/> 
+	</parent>
+
+	<modules>
+		<module>calculadoracommmon</module>
+		<module>calculadorabackend</module>
+		<module>calculadoracontroler</module>
+	</modules>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+
+		
+		<testcontainers.version>1.14.3</testcontainers.version>
+		<system-rules.version>1.19.0</system-rules.version>
+		<logstash-logback-encoder.version>6.4</logstash-logback-encoder.version>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.testcontainers</groupId>
+				<artifactId>testcontainers</artifactId>
+				<version>${testcontainers.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.github.stefanbirkner</groupId>
+				<artifactId>system-rules</artifactId>
+				<version>${system-rules.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>net.logstash.logback</groupId>
+				<artifactId>logstash-logback-encoder</artifactId>
+				<version>${logstash-logback-encoder.version}</version>
+			</dependency>
+		</dependencies>
+
+	</dependencyManagement>
+
+</project>
